@@ -7,7 +7,7 @@ ARS := -lGameController -lErrorHandler -lFileIO -lGameLogic -lUserIO
 export BUILD_DIR := '..\..\bin\'
 export TEST_BUILD_DIR := '..\bin\tests\'
 
-all: GameLogic UserIO FileIO GameController ErrorHandler tests main
+all: GameLogic UserIO FileIO GameController ErrorHandler Resources tests main
 
 .PHONY: GameLogic
 GameLogic:     
@@ -28,6 +28,10 @@ GameController:
 .PHONY: ErrorHandler
 ErrorHandler:
 	$(MAKE) -C ./src/ErrorHandler/
+	
+.PHONY: Resources
+Resources:
+	$(MAKE) -C ./res/icon/
 
 .PHONY: tests
 tests:
@@ -47,7 +51,7 @@ tests:
 .PHONY: main
 main:
 		$(CC) $(CCFLAGS) -c -o ./bin/main.o main.c
-		$(CC) $(CCFLAGS) -Lbin/ -obin/$(TARGET) $(OBJS) $(ARS) 
+		$(CC) $(CCFLAGS) -Lbin/ -obin/$(TARGET) bin/resource.o $(OBJS) $(ARS) 
 		strip bin/$(TARGET)
 
 .PHONY: clean
