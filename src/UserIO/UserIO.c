@@ -79,8 +79,9 @@ int showMenu()
 void DrawField(char field_data[ROWS][COLUMNS]) 
 {
 	SetPosition(0,0);
+	int height_limit = 5;
     printf("Game Field \n");
-    for (int y = 0; y < COLUMNS; ++y) 
+    for (int y = height_limit; y < COLUMNS; ++y) 
 	{
         printf("%c", 186);
         for (int x = 0; x < ROWS; ++x) 

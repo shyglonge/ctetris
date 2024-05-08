@@ -5,6 +5,15 @@
 #include <Windows.h>
 #include <conio.h>
 
+
+void fill_stash()
+{
+	int max_fig = sizeof(shape_bitmap) / sizeof(shape_bitmap[0]);
+	
+}
+	
+
+
 void generate_piece()	//get random figure
 {
 	int max_fig = sizeof(shape_bitmap) / sizeof(shape_bitmap[0]);
