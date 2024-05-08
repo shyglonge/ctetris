@@ -7,6 +7,16 @@
 #include "../GameLogic/GameLogic.h"
 #include "../FileIO/FileIO.h"
 
+void ShowConsoleCursor(const bool flag)
+{
+    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO cursorInfo;
+
+    GetConsoleCursorInfo(out, &cursorInfo);
+    cursorInfo.bVisible = false;
+    SetConsoleCursorInfo(out, &cursorInfo);
+}
+
 void SetPosition(int X, int Y)
 {
 	//Сделано для отладки. В основной проект не входит!
@@ -79,6 +89,7 @@ int showMenu()
 void DrawField(char field_data[ROWS][COLUMNS]) 
 {
 	SetPosition(0,0);
+	ShowConsoleCursor(false);
 	int height_limit = 5;
     printf("Game Field \n");
     for (int y = height_limit; y < COLUMNS; ++y) 

@@ -6,18 +6,55 @@
 #include <conio.h>
 
 
-void fill_stash()
+void shuffle(int* array, int n)
 {
-	int max_fig = sizeof(shape_bitmap) / sizeof(shape_bitmap[0]);
+	for(int i = n-1; i > 0; --i)
+	{
+		int j = rand() % (i+1);
+		int tmp = array[j];
+		array[j] = array[i];
+		array[i] = tmp;
+	}
 	
 }
+
+void fill_stash()
+{
+	stash_index = 0;
 	
+	for(int i = 0; i < stash_size; ++i)
+	{
+		stash[i] = i;
+	}	
+	
+	shuffle(&stash[0], sizeof(stash)/sizeof(stash[0]));
+	
+	
+	/*for(size_t i = 0; i < stash_size; ++i)
+	{
+		printf("Stash: %d\n", stash[i]);
+		
+	}
+	
+	system("pause");*/
+}
 
 
 void generate_piece()	//get random figure
 {
-	int max_fig = sizeof(shape_bitmap) / sizeof(shape_bitmap[0]);
-	int fig = rand() % max_fig;
+	if(stash_index == stash_size)
+	{
+		fill_stash();
+	}
+	
+	int fig = stash[stash_index];
+	
+	//printf("%d : %d\n", stash_index, stash[stash_index]);
+	
+	++stash_index;
+	
+	
+	
 	current_y = 0;
 	current_x = 5;
 	memcpy(&current_piece, &shape_bitmap[fig], sizeof(shape_bitmap[0]));
@@ -120,6 +157,7 @@ int GetDrawData(char* field_data)
 void gameReset()
 {
 	srand(time(NULL));
+	fill_stash();
 	memset(&game_field, 0, sizeof(game_field));
 	global_score = 0;
 	current_y = 20;

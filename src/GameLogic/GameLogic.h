@@ -84,7 +84,9 @@ static char shape_bitmap[][FIGURE_SIZE][FIGURE_SIZE] =
 	}
 };
 
+static const int stash_size = sizeof(shape_bitmap)/sizeof(shape_bitmap[0]);
 static int stash[sizeof(shape_bitmap)/sizeof(shape_bitmap[0])];
+static int stash_index = 0;
 
 static int tick_cnt = 0;
 
