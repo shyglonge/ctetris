@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <io.h>
+#include "FileIO.h"
+
+
+int LoadLeaderBoard(LeaderboardEntry **entries, int *size) 
+{
+    FILE *file = fopen("leaderboard.txt", "r");
+    if (file == NULL) {
+        return ERROR_OPEN_FILE; // Ошибка открытия файла
+    }
+
+    // Проверка наличия записей в файле
+    fseek(file, 0, SEEK_END);
+    long fileSize = ftell(file);
+    rewind(file);
+    if (fileSize == 0) {
+        fclose(file);
+        return ERROR_EMPTY_FILE; // Файл пуст
+    }
+
+    // Выделение памяти для хранения данных
+    *entries = (LeaderboardEntry*)malloc(INITIAL_CAPACITY * sizeof(LeaderboardEntry));
+    if (*entries == NULL) {
+        fclose(file);
+        return ERROR_MEMORY_ALLOCATION; // Ошибка выделения памяти
+    }
+
+    // Загрузка данных из файла в структуры
+    *size = 0;
+    while (fscanf(file, "%s %d", (*entries)[*size].name, &(*entries)[*size].score) != EOF) {
+        (*size)++;
+    }
+
+    fclose(file);
+    return 0; // Успешная загрузка
+}
+
+
+
+
+int addScore(LeaderboardEntry **entries, int *size, int *capacity, const char *name, int score) {
+    // Проверка наличия имени игрока
+    if (name == NULL || strlen(name) == 0 || strlen(name) >= MAX_NAME_LENGTH) {
+        return ERROR_INVALID_USERNAME; // Некорректное имя игрока
+    }
+    
+    // Проверка значения очков
+    if (score < 0) {
+        return ERROR_INVALID_SCORE; // Некорректное количество очков
+    }
+    
+    // Добавление игрока в таблицу лидеров
+    if (*size >= *capacity) {
+        // Увеличение емкости массива вдвое
+        *capacity *= 2;
+        *entries = (LeaderboardEntry*)realloc(*entries, *capacity * sizeof(LeaderboardEntry));
+        if (*entries == NULL) {
+            return ERROR_MEMORY_ALLOCATION; // Ошибка перевыделения памяти
+        }
+    }
+    
+    // Поиск позиции для вставки игрока в таблицу
+    int insertIndex = 0;
+    while (insertIndex < *size && score <= (*entries)[insertIndex].score) {
+        insertIndex++;
+    }
+    
+    // Сдвиг записей в таблице, чтобы освободить место для нового игрока
+    int i;
+    for (i = *size - 1; i >= insertIndex; i--) {
+        strcpy((*entries)[i + 1].name, (*entries)[i].name);
+        (*entries)[i + 1].score = (*entries)[i].score;
+    }
+    
+    // Добавление нового игрока
+    strcpy((*entries)[insertIndex].name, name);
+    (*entries)[insertIndex].score = score;
+    (*size)++;
+    return insertIndex + 1; // Возвращает позицию нового игрока в таблице
+}
+
+int SaveLeaderBoard(LeaderboardEntry *entries, int size) {
+    FILE *file = fopen("leaderboard.txt", "w");
+    if (file == NULL) {
+        return ERROR_OPEN_FILE; // Ошибка открытия файла для записи
+    }
+
+    // Запись данных из структур в файл
+    int i;
+    for (i = 0; i < size; i++) {
+        fprintf(file, "%s %d\n", entries[i].name, entries[i].score);
+    }
+
+    fclose(file);
+    return 0; // Успешная запись в файл
+}

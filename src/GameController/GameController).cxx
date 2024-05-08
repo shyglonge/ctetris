@@ -1,0 +1,87 @@
+#include <Windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "../UserIO/UserIO.h"
+#include "../GameLogic/GameLogic.h"
+#include "../FileIO/FileIO.h"
+#include "GameController.h"
+
+static char field[ROWS][COLUMNS];
+static char playerName[50];
+static LeaderboardEntry* leaderboard = 0;
+static int sizeLeaderboard = 0;
+static int capacityLeaderboard = 0;
+
+int getMoveCode(int code){
+    short result = -1;
+    switch(code){
+        case ('a' ) :
+            result = TETRIS_LEFT;
+            break;
+        case ('s' ) :
+            result = TETRIS_DOWN;
+            break;
+        case ('d' ) :
+            result = TETRIS_RIGHT;
+            break;
+        case ('r' ) :
+            result = TETRIS_ROTATE;
+            break;
+
+    }
+    return result;
+}
+
+void playGame()
+{
+    gameReset();
+    short ifGameRun;
+    while (ifGameRun != -1){
+		Sleep(5);
+        onInput(getMoveCode(getInput()));
+
+        ifGameRun = onTick();
+        GetDrawData(&field[0][0]);
+        DrawField(field);
+    }
+
+    capacityLeaderboard = addScore(&leaderboard,&sizeLeaderboard, &capacityLeaderboard ,playerName,GetNewScore());
+    SaveLeaderBoard(leaderboard, sizeLeaderboard);
+}
+
+
+void startController()
+{
+	system("CLS");
+    int current_mode = -1;
+	
+	leaderboard = (LeaderboardEntry*)malloc(5*sizeof(LeaderboardEntry));
+	memset(leaderboard, 0, 5*sizeof(LeaderboardEntry));
+	sizeLeaderboard = 5;
+	capacityLeaderboard = 5;
+	
+    LoadLeaderBoard(&leaderboard,&sizeLeaderboard);
+	capacityLeaderboard = sizeLeaderboard;
+    getPlayerName(playerName);
+
+
+    while (current_mode != MENU_END)
+	{
+        current_mode = showMenu();
+		system("CLS");
+        switch (current_mode){
+            case (MENU_START) :
+                playGame();
+                break;
+            case (MENU_LEADERBOARD) :
+				if(!leaderboard)
+					break;
+                showLeaderBoard(leaderboard, sizeLeaderboard);
+                break;
+            case (MENU_END) :
+                end_game();
+                break;
+        }
+    }
+
+}
