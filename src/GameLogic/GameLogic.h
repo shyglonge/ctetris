@@ -181,7 +181,28 @@ void completeLines();
 */
 void merge_piece(char piece[FIGURE_SIZE][FIGURE_SIZE], char field[ROWS][COLUMNS]);
 
+/**
+*	@function GetNewScore
+*   @brief возвращает текущее количество очков
+*   @return int
+*/
+int GetNewScore();
 
+
+/**
+*	@function isFull
+*   @brief возвращает 0 или 1 в зависимости от того, заполнено ли поле
+*   @return bool
+*/
+bool isFull();
+
+
+/**
+*	@function completeLines
+*   @brief находит заполненные линии, удаляет их и начисляет очки
+*   @return void
+*/
+void completeLines();
 
 
 int runTest();
