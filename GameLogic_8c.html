@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tetris: Файл src/GameLogic/GameLogic.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tetris
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43a675281a639807a8e84134baca4472.html">GameLogic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл GameLogic.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="GameLogic_8h_source.html">GameLogic.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;Windows.h&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для GameLogic.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="GameLogic_8c__incl.png" border="0" usemap="#asrc_2GameLogic_2GameLogic_8c" alt=""/></div>
+<map name="asrc_2GameLogic_2GameLogic_8c" id="asrc_2GameLogic_2GameLogic_8c">
+<area shape="rect" title=" " alt="" coords="154,5,361,32"/>
+<area shape="rect" href="GameLogic_8h.html" title=" " alt="" coords="79,80,185,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,72,181"/>
+<area shape="rect" title=" " alt="" coords="192,155,275,181"/>
+<area shape="rect" title=" " alt="" coords="260,80,324,107"/>
+<area shape="rect" title=" " alt="" coords="348,80,441,107"/>
+<area shape="rect" title=" " alt="" coords="465,80,535,107"/>
+<area shape="rect" title=" " alt="" coords="97,155,167,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:afbeca555e613f91a8b97861bbffa69bf"><td class="memItemLeft" align="right" valign="top"><a id="afbeca555e613f91a8b97861bbffa69bf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>shuffle</b> (int *array, int n)</td></tr>
+<tr class="separator:afbeca555e613f91a8b97861bbffa69bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092242aada42d8309f365a7b6bdda0f7"><td class="memItemLeft" align="right" valign="top"><a id="a092242aada42d8309f365a7b6bdda0f7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fill_stash</b> ()</td></tr>
+<tr class="separator:a092242aada42d8309f365a7b6bdda0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2616aaddd2b6321dcba0855090439985"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a2616aaddd2b6321dcba0855090439985">generate_piece</a> ()</td></tr>
+<tr class="memdesc:a2616aaddd2b6321dcba0855090439985"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function generate_piece  <a href="GameLogic_8c.html#a2616aaddd2b6321dcba0855090439985">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2616aaddd2b6321dcba0855090439985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7213e561c19b1ee9374c788ca37a36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a9c7213e561c19b1ee9374c788ca37a36">MatrixOrigin</a> (char matrix[FIGURE_SIZE][FIGURE_SIZE])</td></tr>
+<tr class="memdesc:a9c7213e561c19b1ee9374c788ca37a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function MatrixOrigin  <a href="GameLogic_8c.html#a9c7213e561c19b1ee9374c788ca37a36">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9c7213e561c19b1ee9374c788ca37a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea36dd4e4317db7aa29d38c8685e916"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a8ea36dd4e4317db7aa29d38c8685e916">checkCollision</a> (int x_coord, int y_coord)</td></tr>
+<tr class="memdesc:a8ea36dd4e4317db7aa29d38c8685e916"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function generate_piece  <a href="GameLogic_8c.html#a8ea36dd4e4317db7aa29d38c8685e916">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8ea36dd4e4317db7aa29d38c8685e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9697b09fa913802b45f203f3c5f00644"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a9697b09fa913802b45f203f3c5f00644">merge_piece</a> (char piece[FIGURE_SIZE][FIGURE_SIZE], char field[ROWS][COLUMNS])</td></tr>
+<tr class="memdesc:a9697b09fa913802b45f203f3c5f00644"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function merge_piece  <a href="GameLogic_8c.html#a9697b09fa913802b45f203f3c5f00644">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9697b09fa913802b45f203f3c5f00644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b68447dd7896ca060f5d73a9efd02e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a42b68447dd7896ca060f5d73a9efd02e">onInput</a> (int code)</td></tr>
+<tr class="memdesc:a42b68447dd7896ca060f5d73a9efd02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function onInput  <a href="GameLogic_8c.html#a42b68447dd7896ca060f5d73a9efd02e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a42b68447dd7896ca060f5d73a9efd02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb4e553df5f5d5e46e534990f055a86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a2cb4e553df5f5d5e46e534990f055a86">GetDrawData</a> (char *field_data)</td></tr>
+<tr class="memdesc:a2cb4e553df5f5d5e46e534990f055a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function GetDrawData  <a href="GameLogic_8c.html#a2cb4e553df5f5d5e46e534990f055a86">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2cb4e553df5f5d5e46e534990f055a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213945eb102ff02fa211dd75a6472d42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a213945eb102ff02fa211dd75a6472d42">gameReset</a> ()</td></tr>
+<tr class="memdesc:a213945eb102ff02fa211dd75a6472d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function gameReset  <a href="GameLogic_8c.html#a213945eb102ff02fa211dd75a6472d42">Подробнее...</a><br /></td></tr>
+<tr class="separator:a213945eb102ff02fa211dd75a6472d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135da32b26247a2a9075d48f4e36c1b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a135da32b26247a2a9075d48f4e36c1b8">rotateMatrix</a> (char matrix[FIGURE_SIZE][FIGURE_SIZE])</td></tr>
+<tr class="memdesc:a135da32b26247a2a9075d48f4e36c1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function rotateMatrix  <a href="GameLogic_8c.html#a135da32b26247a2a9075d48f4e36c1b8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a135da32b26247a2a9075d48f4e36c1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed32db41acf14302db9ef6de61589f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a7ed32db41acf14302db9ef6de61589f4">completeLines</a> ()</td></tr>
+<tr class="memdesc:a7ed32db41acf14302db9ef6de61589f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function completeLines  <a href="GameLogic_8c.html#a7ed32db41acf14302db9ef6de61589f4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7ed32db41acf14302db9ef6de61589f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e70330939fdfc4dbc2f60c1a660584d"><td class="memItemLeft" align="right" valign="top"><a id="a3e70330939fdfc4dbc2f60c1a660584d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFull</b> ()</td></tr>
+<tr class="separator:a3e70330939fdfc4dbc2f60c1a660584d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab73edeb1909b8c8b6d10393f0e45a95b"><td class="memItemLeft" align="right" valign="top"><a id="ab73edeb1909b8c8b6d10393f0e45a95b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMatrixRealWidth</b> (char figure[FIGURE_SIZE][FIGURE_SIZE])</td></tr>
+<tr class="separator:ab73edeb1909b8c8b6d10393f0e45a95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198ea40b6c84e968e3e8b97f73fbfc72"><td class="memItemLeft" align="right" valign="top"><a id="a198ea40b6c84e968e3e8b97f73fbfc72"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMatrixRealHeight</b> (char figure[FIGURE_SIZE][FIGURE_SIZE])</td></tr>
+<tr class="separator:a198ea40b6c84e968e3e8b97f73fbfc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c95c2261ba6b9bb752d5995cc82d413"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a6c95c2261ba6b9bb752d5995cc82d413">onTick</a> ()</td></tr>
+<tr class="memdesc:a6c95c2261ba6b9bb752d5995cc82d413"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function onTick  <a href="GameLogic_8c.html#a6c95c2261ba6b9bb752d5995cc82d413">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6c95c2261ba6b9bb752d5995cc82d413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ceb1d40798d4f571ad68d13a62716a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameLogic_8c.html#a3ceb1d40798d4f571ad68d13a62716a4">GetNewScore</a> ()</td></tr>
+<tr class="memdesc:a3ceb1d40798d4f571ad68d13a62716a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function GetNewScore  <a href="GameLogic_8c.html#a3ceb1d40798d4f571ad68d13a62716a4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3ceb1d40798d4f571ad68d13a62716a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f9e9c6bc8747ef81cbb87d0b4ac014"><td class="memItemLeft" align="right" valign="top"><a id="aa2f9e9c6bc8747ef81cbb87d0b4ac014"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ddebugDraw</b> (char field_data[10][40])</td></tr>
+<tr class="separator:aa2f9e9c6bc8747ef81cbb87d0b4ac014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaebedca12a0b867771c85073eccdc899"><td class="memItemLeft" align="right" valign="top"><a id="aaebedca12a0b867771c85073eccdc899"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>isFull_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:aaebedca12a0b867771c85073eccdc899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de9eb60521b69b25d4e55c23400c946"><td class="memItemLeft" align="right" valign="top"><a id="a1de9eb60521b69b25d4e55c23400c946"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getScore_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a1de9eb60521b69b25d4e55c23400c946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9747b46a12edb3e22774a39599884f"><td class="memItemLeft" align="right" valign="top"><a id="a5d9747b46a12edb3e22774a39599884f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>CompleteLines_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a5d9747b46a12edb3e22774a39599884f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c4f6a869446ff85a06ed7db430036d"><td class="memItemLeft" align="right" valign="top"><a id="ae6c4f6a869446ff85a06ed7db430036d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>MatrixOrigin_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:ae6c4f6a869446ff85a06ed7db430036d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0f2eba82b044ed03b69cd1faea24cb"><td class="memItemLeft" align="right" valign="top"><a id="a0f0f2eba82b044ed03b69cd1faea24cb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>RotateMatrix_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a0f0f2eba82b044ed03b69cd1faea24cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a8439522739e85a56c48d0eca046b7"><td class="memItemLeft" align="right" valign="top"><a id="a86a8439522739e85a56c48d0eca046b7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>gameReset_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a86a8439522739e85a56c48d0eca046b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39f7b770e8fda7f77dae17d1510331c7"><td class="memItemLeft" align="right" valign="top"><a id="a39f7b770e8fda7f77dae17d1510331c7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMatrixRealWidth_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a39f7b770e8fda7f77dae17d1510331c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a465d9a6f28a893c838de3c18581f7"><td class="memItemLeft" align="right" valign="top"><a id="a40a465d9a6f28a893c838de3c18581f7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>RotateMatrix_test2</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a40a465d9a6f28a893c838de3c18581f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae523d4b24f1564d5c1c234f09402d6f5"><td class="memItemLeft" align="right" valign="top"><a id="ae523d4b24f1564d5c1c234f09402d6f5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>SetInput_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:ae523d4b24f1564d5c1c234f09402d6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2b16e67ad0c8d904b7c2b9547a0b01"><td class="memItemLeft" align="right" valign="top"><a id="a7f2b16e67ad0c8d904b7c2b9547a0b01"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollision_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a7f2b16e67ad0c8d904b7c2b9547a0b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fcccfdb7a5107b39d61ea633a153342"><td class="memItemLeft" align="right" valign="top"><a id="a4fcccfdb7a5107b39d61ea633a153342"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>GetDrawData_test</b> (char *output, size_t output_len)</td></tr>
+<tr class="separator:a4fcccfdb7a5107b39d61ea633a153342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fa9710c9b156b8df28abb74fb30f9c"><td class="memItemLeft" align="right" valign="top"><a id="a83fa9710c9b156b8df28abb74fb30f9c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>runTest</b> ()</td></tr>
+<tr class="separator:a83fa9710c9b156b8df28abb74fb30f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a8ea36dd4e4317db7aa29d38c8685e916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea36dd4e4317db7aa29d38c8685e916">&#9670;&nbsp;</a></span>checkCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y_coord</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function generate_piece </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>x_coord, X координата фигуры </td></tr>
+    <tr><td class="paramname">int</td><td>y_coord, Y координата фигуры</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Проверяет, сталкивается ли фигура на данных координатах со стенками или другими блоками </p>
+
+</div>
+</div>
+<a id="a7ed32db41acf14302db9ef6de61589f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed32db41acf14302db9ef6de61589f4">&#9670;&nbsp;</a></span>completeLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void completeLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function completeLines </p>
+<p>Находит заполненные строки, обнуляет их и "сваливает" все строки выше неё </p>
+
+</div>
+</div>
+<a id="a213945eb102ff02fa211dd75a6472d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213945eb102ff02fa211dd75a6472d42">&#9670;&nbsp;</a></span>gameReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gameReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function gameReset </p>
+<p>Начинает игру с самого начала. Обнуляет счетчик тиков, очков и игровое поле </p><dl class="section return"><dt>Возвращает</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a2616aaddd2b6321dcba0855090439985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2616aaddd2b6321dcba0855090439985">&#9670;&nbsp;</a></span>generate_piece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generate_piece </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function generate_piece </p>
+<p>Генерирует случайную фигуру и задает ей координаты </p>
+
+</div>
+</div>
+<a id="a2cb4e553df5f5d5e46e534990f055a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb4e553df5f5d5e46e534990f055a86">&#9670;&nbsp;</a></span>GetDrawData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetDrawData </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>field_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function GetDrawData </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gamefield</td><td>Игровое поле. char[10][40]</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>0 в ячейке - ячейка пустая число отличное от нуля - код клетки фигуры, для каждой фигуры свой (от 1 до 4) (Число отличное от нуля - ячейка закрашена цветом, зависящим от значения в ячейке в теме по дефолту: 1 - Квадрат 2 - L 3 - T 4 - I) </p><dl class="section return"><dt>Возвращает</dt><dd>0 - поле скопировано. -1 - ошибка </dd></dl>
+
+</div>
+</div>
+<a id="a3ceb1d40798d4f571ad68d13a62716a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ceb1d40798d4f571ad68d13a62716a4">&#9670;&nbsp;</a></span>GetNewScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetNewScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function GetNewScore </p>
+<p>Возвращает текущее количество игровых очков </p><dl class="section return"><dt>Возвращает</dt><dd>возвращает текущее количество очков </dd></dl>
+
+</div>
+</div>
+<a id="a9c7213e561c19b1ee9374c788ca37a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7213e561c19b1ee9374c788ca37a36">&#9670;&nbsp;</a></span>MatrixOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatrixOrigin </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>matrix</em>[FIGURE_SIZE][FIGURE_SIZE]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function MatrixOrigin </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>matrix[FIGURE_SIZE][FIGURE_SIZE] - матрица фигуры</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Возвращает фигуру в матрице на координаты (0;0); </p>
+
+</div>
+</div>
+<a id="a9697b09fa913802b45f203f3c5f00644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9697b09fa913802b45f203f3c5f00644">&#9670;&nbsp;</a></span>merge_piece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_piece </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>piece</em>[FIGURE_SIZE][FIGURE_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>field</em>[ROWS][COLUMNS]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function merge_piece </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>piece[FIGURE_SIZE][FIGURE_SIZE] - Фигура </td></tr>
+    <tr><td class="paramname">char</td><td>field[ROWS][COLUMNS] - Поле</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>делает фигуру статичной и "впечатывает" его в игровое поле как группу статичных блоков </p>
+
+</div>
+</div>
+<a id="a42b68447dd7896ca060f5d73a9efd02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b68447dd7896ca060f5d73a9efd02e">&#9670;&nbsp;</a></span>onInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onInput </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function onInput </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Код движения тетриса. TETRIS_LEFT, TETRIS_RIGHT, TETRIS_DOWN, TETRIS_ROTATE </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>возвращает 0 </dd></dl>
+
+</div>
+</div>
+<a id="a6c95c2261ba6b9bb752d5995cc82d413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c95c2261ba6b9bb752d5995cc82d413">&#9670;&nbsp;</a></span>onTick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int onTick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function onTick </p>
+<p>Вызывается каждый тик, в ней обрабатывается игровая логика поворот, падение, стыковка блоков, сброс строчек вниз, начисление очков Проверяет на проигрыш. </p><dl class="section return"><dt>Возвращает</dt><dd>возвращает 0, если -1 - игра завершена </dd></dl>
+
+</div>
+</div>
+<a id="a135da32b26247a2a9075d48f4e36c1b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135da32b26247a2a9075d48f4e36c1b8">&#9670;&nbsp;</a></span>rotateMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rotateMatrix </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>matrix</em>[FIGURE_SIZE][FIGURE_SIZE]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function rotateMatrix </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>matrix[FIGURE_SIZE][FIGURE_SIZE];</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Поворот матрицы фигуры на 90 градусов по часовой стрелке </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

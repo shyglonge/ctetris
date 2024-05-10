@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tetris: Файл src/FileIO/FileIO.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tetris
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0a4e14084e9f7c16bbb9096e2bb1bfb.html">FileIO</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл FileIO.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="FileIO_8h__dep__incl.png" border="0" usemap="#asrc_2FileIO_2FileIO_8hdep" alt=""/></div>
+<map name="asrc_2FileIO_2FileIO_8hdep" id="asrc_2FileIO_2FileIO_8hdep">
+<area shape="rect" title=" " alt="" coords="167,5,301,32"/>
+<area shape="rect" href="FileIO_8c.html" title=" " alt="" coords="5,80,140,107"/>
+<area shape="rect" href="GameController_8c.html" title=" " alt="" coords="129,155,277,196"/>
+<area shape="rect" href="UserIO_8c.html" title=" " alt="" coords="315,162,463,189"/>
+<area shape="rect" href="UserIO_8h.html" title=" " alt="" coords="215,80,365,107"/>
+</map>
+</div>
+</div>
+<p><a href="FileIO_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a5446a5bbb68bb93392b04dfbfa0095af"><td class="memItemLeft" align="right" valign="top"><a id="a5446a5bbb68bb93392b04dfbfa0095af"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INITIAL_CAPACITY</b>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a5446a5bbb68bb93392b04dfbfa0095af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c397a708cec89c74029582574516b30"><td class="memItemLeft" align="right" valign="top"><a id="a0c397a708cec89c74029582574516b30"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_NAME_LENGTH</b>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a0c397a708cec89c74029582574516b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18acdce401ee0e52073166b285b3c56e"><td class="memItemLeft" align="right" valign="top"><a id="a18acdce401ee0e52073166b285b3c56e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_OPEN_FILE</b>&#160;&#160;&#160;0x001</td></tr>
+<tr class="separator:a18acdce401ee0e52073166b285b3c56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1477d42a6722807054f72fc711cbb505"><td class="memItemLeft" align="right" valign="top"><a id="a1477d42a6722807054f72fc711cbb505"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_LOCK_FILE</b>&#160;&#160;&#160;0x002</td></tr>
+<tr class="separator:a1477d42a6722807054f72fc711cbb505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70077305ed916c2c895e47e2e887378"><td class="memItemLeft" align="right" valign="top"><a id="ac70077305ed916c2c895e47e2e887378"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_MEMORY_ALLOCATION</b>&#160;&#160;&#160;0x003</td></tr>
+<tr class="separator:ac70077305ed916c2c895e47e2e887378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0739ee44c74f53ce5b59e439efa6e5b8"><td class="memItemLeft" align="right" valign="top"><a id="a0739ee44c74f53ce5b59e439efa6e5b8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_INVALID_FILENAME</b>&#160;&#160;&#160;0x004</td></tr>
+<tr class="separator:a0739ee44c74f53ce5b59e439efa6e5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8defa7637367e828fa40cbea1ccb677"><td class="memItemLeft" align="right" valign="top"><a id="ad8defa7637367e828fa40cbea1ccb677"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_INVALID_SCORE</b>&#160;&#160;&#160;0x005</td></tr>
+<tr class="separator:ad8defa7637367e828fa40cbea1ccb677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8a6d93f38622a650cf3f050ef03415"><td class="memItemLeft" align="right" valign="top"><a id="a3a8a6d93f38622a650cf3f050ef03415"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_WRITE_FILE</b>&#160;&#160;&#160;0x006</td></tr>
+<tr class="separator:a3a8a6d93f38622a650cf3f050ef03415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342e4aef974c38ede3a3e3868cd79e0d"><td class="memItemLeft" align="right" valign="top"><a id="a342e4aef974c38ede3a3e3868cd79e0d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_EMPTY_FILE</b>&#160;&#160;&#160;0x007</td></tr>
+<tr class="separator:a342e4aef974c38ede3a3e3868cd79e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ab5dbe4fa45872062a59e500e1b93ee57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FileIO_8h.html#ab5dbe4fa45872062a59e500e1b93ee57">LoadLeaderBoard</a> (<a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> **entries, int *size)</td></tr>
+<tr class="memdesc:ab5dbe4fa45872062a59e500e1b93ee57"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoadLeaderBoard функция загрузки таблицы лидеров из файла  <a href="FileIO_8h.html#ab5dbe4fa45872062a59e500e1b93ee57">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab5dbe4fa45872062a59e500e1b93ee57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34be1b37cf8719b7530a76bfd754240f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FileIO_8h.html#a34be1b37cf8719b7530a76bfd754240f">addScore</a> (<a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> **entries, int *size, const char *name, int score)</td></tr>
+<tr class="memdesc:a34be1b37cf8719b7530a76bfd754240f"><td class="mdescLeft">&#160;</td><td class="mdescRight">addScore функция добавления очков игроку  <a href="FileIO_8h.html#a34be1b37cf8719b7530a76bfd754240f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a34be1b37cf8719b7530a76bfd754240f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210c9d03fc475ac929e5b54131619f99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FileIO_8h.html#a210c9d03fc475ac929e5b54131619f99">SaveLeaderBoard</a> (<a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> *entries, int size)</td></tr>
+<tr class="memdesc:a210c9d03fc475ac929e5b54131619f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">SaveLeaderBoard функция сохранения таблицы лидеров в файл  <a href="FileIO_8h.html#a210c9d03fc475ac929e5b54131619f99">Подробнее...</a><br /></td></tr>
+<tr class="separator:a210c9d03fc475ac929e5b54131619f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a34be1b37cf8719b7530a76bfd754240f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34be1b37cf8719b7530a76bfd754240f">&#9670;&nbsp;</a></span>addScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addScore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> **&#160;</td>
+          <td class="paramname"><em>entries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>addScore функция добавления очков игроку </p>
+<p>Эта функция ищет игрока с заданным именем в таблице лидеров. Если игрок найден, его счет обновляется на указанное количество очков. Если игрок не найден, он добавляется в таблицу лидеров с указанным именем и счетом.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>указатель на указатель на массив структур <a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a>, представляющий таблицу лидеров </td></tr>
+    <tr><td class="paramname">size</td><td>указатель на переменную, содержащую текущее количество записей в таблице лидеров </td></tr>
+    <tr><td class="paramname">name</td><td>имя игрока, для которого добавляются очки </td></tr>
+    <tr><td class="paramname">score</td><td>количество очков, которое нужно добавить игроку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>возвращает 0 в случае успешного добавления или обновления счета, -1 в случае ошибки </dd></dl>
+
+</div>
+</div>
+<a id="ab5dbe4fa45872062a59e500e1b93ee57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5dbe4fa45872062a59e500e1b93ee57">&#9670;&nbsp;</a></span>LoadLeaderBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LoadLeaderBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> **&#160;</td>
+          <td class="paramname"><em>entries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LoadLeaderBoard функция загрузки таблицы лидеров из файла </p>
+<p>Эта функция открывает файл "leaderboard.txt", загружает данные о лидерах и их счетах из этого файла в массив структур <a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>указатель на указатель на массив структур <a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a>, в который будут загружены данные о лидерах </td></tr>
+    <tr><td class="paramname">size</td><td>указатель на переменную, в которую будет записано количество загруженных записей </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>возвращает 0 в случае успешной загрузки, -1 в случае ошибки </dd></dl>
+
+</div>
+</div>
+<a id="a210c9d03fc475ac929e5b54131619f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210c9d03fc475ac929e5b54131619f99">&#9670;&nbsp;</a></span>SaveLeaderBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLeaderBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> *&#160;</td>
+          <td class="paramname"><em>entries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SaveLeaderBoard функция сохранения таблицы лидеров в файл </p>
+<p>Эта функция сохраняет текущее состояние таблицы лидеров в файл "leaderboard.txt".</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>массив структур <a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a>, представляющий таблицу лидеров </td></tr>
+    <tr><td class="paramname">size</td><td>текущее количество записей в таблице лидеров </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>возвращает 0 в случае успешного сохранения, -1 в случае ошибки </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

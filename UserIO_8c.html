@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tetris: Файл src/UserIO/UserIO.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tetris
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b77cf1c271bbc1bbcfb1de3c7e184c76.html">UserIO</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл UserIO.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="UserIO_8h_source.html">UserIO.h</a>&quot;</code><br />
+<code>#include &lt;Windows.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="GameLogic_8h_source.html">../GameLogic/GameLogic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FileIO_8h_source.html">../FileIO/FileIO.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для UserIO.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="UserIO_8c__incl.png" border="0" usemap="#asrc_2UserIO_2UserIO_8c" alt=""/></div>
+<map name="asrc_2UserIO_2UserIO_8c" id="asrc_2UserIO_2UserIO_8c">
+<area shape="rect" title=" " alt="" coords="334,5,482,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,72,181"/>
+<area shape="rect" title=" " alt="" coords="327,80,396,107"/>
+<area shape="rect" title=" " alt="" coords="421,80,491,107"/>
+<area shape="rect" title=" " alt="" coords="231,155,313,181"/>
+<area shape="rect" href="UserIO_8h.html" title=" " alt="" coords="515,80,594,107"/>
+<area shape="rect" href="FileIO_8h.html" title=" " alt="" coords="570,155,694,181"/>
+<area shape="rect" title=" " alt="" coords="669,80,763,107"/>
+<area shape="rect" href="GameLogic_8h.html" title=" " alt="" coords="55,80,251,107"/>
+<area shape="rect" href="struct_8h.html" title=" " alt="" coords="475,155,546,181"/>
+<area shape="rect" title=" " alt="" coords="118,155,189,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a2dd1ec999f53a96af3f69b7fce209e02"><td class="memItemLeft" align="right" valign="top"><a id="a2dd1ec999f53a96af3f69b7fce209e02"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ShowConsoleCursor</b> (const bool flag)</td></tr>
+<tr class="separator:a2dd1ec999f53a96af3f69b7fce209e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a398caea833b19e183fa04234a838c3"><td class="memItemLeft" align="right" valign="top"><a id="a8a398caea833b19e183fa04234a838c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPosition</b> (int X, int Y)</td></tr>
+<tr class="separator:a8a398caea833b19e183fa04234a838c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9efce26606bcf2e77a862ec26988c9ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#a9efce26606bcf2e77a862ec26988c9ef">getPlayerName</a> (char *playername)</td></tr>
+<tr class="memdesc:a9efce26606bcf2e77a862ec26988c9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function getPlayerName  <a href="UserIO_8c.html#a9efce26606bcf2e77a862ec26988c9ef">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9efce26606bcf2e77a862ec26988c9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be44243f30672c846deedaf6b3660f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#a0be44243f30672c846deedaf6b3660f9">showMenu</a> ()</td></tr>
+<tr class="memdesc:a0be44243f30672c846deedaf6b3660f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function showMenu  <a href="UserIO_8c.html#a0be44243f30672c846deedaf6b3660f9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0be44243f30672c846deedaf6b3660f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88f7094767b110fbdc84c53e19d0daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#aa88f7094767b110fbdc84c53e19d0daf">DrawField</a> (char field_data[ROWS][COLUMNS])</td></tr>
+<tr class="memdesc:aa88f7094767b110fbdc84c53e19d0daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function print_game_field  <a href="UserIO_8c.html#aa88f7094767b110fbdc84c53e19d0daf">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa88f7094767b110fbdc84c53e19d0daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8fa0162ea5b6a1bde4828c1803e5fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#a7e8fa0162ea5b6a1bde4828c1803e5fb">showLeaderBoard</a> (<a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> *leaderboard, size_t size)</td></tr>
+<tr class="memdesc:a7e8fa0162ea5b6a1bde4828c1803e5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function showLeaderBoard  <a href="UserIO_8c.html#a7e8fa0162ea5b6a1bde4828c1803e5fb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7e8fa0162ea5b6a1bde4828c1803e5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4202fa5c5191c7e387d7570da6c8cd8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#a4202fa5c5191c7e387d7570da6c8cd8c">end_game</a> ()</td></tr>
+<tr class="memdesc:a4202fa5c5191c7e387d7570da6c8cd8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function end_game  <a href="UserIO_8c.html#a4202fa5c5191c7e387d7570da6c8cd8c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4202fa5c5191c7e387d7570da6c8cd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8392a352b0ea88fdb8bde83f8d9f657b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UserIO_8c.html#a8392a352b0ea88fdb8bde83f8d9f657b">getInput</a> ()</td></tr>
+<tr class="memdesc:a8392a352b0ea88fdb8bde83f8d9f657b"><td class="mdescLeft">&#160;</td><td class="mdescRight">\function getInput  <a href="UserIO_8c.html#a8392a352b0ea88fdb8bde83f8d9f657b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8392a352b0ea88fdb8bde83f8d9f657b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="aa88f7094767b110fbdc84c53e19d0daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88f7094767b110fbdc84c53e19d0daf">&#9670;&nbsp;</a></span>DrawField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawField </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>field_data</em>[ROWS][COLUMNS]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function print_game_field </p>
+<p>Функция,которая отрисовывает игровое поле </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>field_data[10][40] - игровое поле </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a4202fa5c5191c7e387d7570da6c8cd8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4202fa5c5191c7e387d7570da6c8cd8c">&#9670;&nbsp;</a></span>end_game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function end_game </p>
+<p>Функция,которая отвечает за прекращением игрового процесса. Закрывает программу </p><dl class="section return"><dt>Возвращает</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a8392a352b0ea88fdb8bde83f8d9f657b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8392a352b0ea88fdb8bde83f8d9f657b">&#9670;&nbsp;</a></span>getInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function getInput </p>
+<p>Функция,которая возвращает код нажатой кнопки </p><dl class="section return"><dt>Возвращает</dt><dd>int (код нажатой кнопки </dd></dl>
+
+</div>
+</div>
+<a id="a9efce26606bcf2e77a862ec26988c9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9efce26606bcf2e77a862ec26988c9ef">&#9670;&nbsp;</a></span>getPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>playername</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function getPlayerName </p>
+<p>Функция,которая считывает имя игрока из консоли в массив char по указателю </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char*</td><td>playername (OUT) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a7e8fa0162ea5b6a1bde4828c1803e5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8fa0162ea5b6a1bde4828c1803e5fb">&#9670;&nbsp;</a></span>showLeaderBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showLeaderBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> *&#160;</td>
+          <td class="paramname"><em>leaderboard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function showLeaderBoard </p>
+<p>Функция,которая меня размер игрового поля по желанию пользователя </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">массив</td><td><a class="el" href="structLeaderboardEntry.html">LeaderboardEntry</a> leaderboard[MAX_LEADERBOARD_ENTRIES]; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a0be44243f30672c846deedaf6b3660f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be44243f30672c846deedaf6b3660f9">&#9670;&nbsp;</a></span>showMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int showMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>\function showMenu </p>
+<p>Функция,которая отвечает за вывод меню </p><dl class="section return"><dt>Возвращает</dt><dd>возвращает целое число - выбор опции меню, соответствует enum menu_keys </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

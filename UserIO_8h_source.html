@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tetris: Исходный файл src/UserIO/UserIO.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tetris
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b77cf1c271bbc1bbcfb1de3c7e184c76.html">UserIO</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UserIO.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="UserIO_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ROWS 10</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define COLUMNS 40</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../FileIO/FileIO.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">enum</span> menu_keys {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    MENU_START = 1,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    MENU_LEADERBOARD = 2,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    MENU_END</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">int</span> <a class="code" href="UserIO_8h.html#a0be44243f30672c846deedaf6b3660f9">showMenu</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="UserIO_8h.html#aa88f7094767b110fbdc84c53e19d0daf">DrawField</a>(<span class="keywordtype">char</span> field_data[ROWS][COLUMNS]);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="UserIO_8h.html#a9efce26606bcf2e77a862ec26988c9ef">getPlayerName</a>(<span class="keywordtype">char</span>* playername);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="UserIO_8h.html#a7e8fa0162ea5b6a1bde4828c1803e5fb">showLeaderBoard</a>(<a class="code" href="structLeaderboardEntry.html">LeaderboardEntry</a>* leaderboard, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="UserIO_8h.html#a4202fa5c5191c7e387d7570da6c8cd8c">end_game</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">int</span> <a class="code" href="UserIO_8h.html#a8392a352b0ea88fdb8bde83f8d9f657b">getInput</a>();</div>
+<div class="ttc" id="aUserIO_8h_html_a0be44243f30672c846deedaf6b3660f9"><div class="ttname"><a href="UserIO_8h.html#a0be44243f30672c846deedaf6b3660f9">showMenu</a></div><div class="ttdeci">int showMenu()</div><div class="ttdoc">\function showMenu</div><div class="ttdef"><b>Definition:</b> UserIO.c:37</div></div>
+<div class="ttc" id="aUserIO_8h_html_a4202fa5c5191c7e387d7570da6c8cd8c"><div class="ttname"><a href="UserIO_8h.html#a4202fa5c5191c7e387d7570da6c8cd8c">end_game</a></div><div class="ttdeci">void end_game()</div><div class="ttdoc">\function end_game</div><div class="ttdef"><b>Definition:</b> UserIO.c:197</div></div>
+<div class="ttc" id="aUserIO_8h_html_a7e8fa0162ea5b6a1bde4828c1803e5fb"><div class="ttname"><a href="UserIO_8h.html#a7e8fa0162ea5b6a1bde4828c1803e5fb">showLeaderBoard</a></div><div class="ttdeci">void showLeaderBoard(LeaderboardEntry *leaderboard, size_t size)</div><div class="ttdoc">\function showLeaderBoard</div><div class="ttdef"><b>Definition:</b> UserIO.c:180</div></div>
+<div class="ttc" id="aUserIO_8h_html_a8392a352b0ea88fdb8bde83f8d9f657b"><div class="ttname"><a href="UserIO_8h.html#a8392a352b0ea88fdb8bde83f8d9f657b">getInput</a></div><div class="ttdeci">int getInput()</div><div class="ttdoc">\function getInput</div><div class="ttdef"><b>Definition:</b> UserIO.c:202</div></div>
+<div class="ttc" id="aUserIO_8h_html_a9efce26606bcf2e77a862ec26988c9ef"><div class="ttname"><a href="UserIO_8h.html#a9efce26606bcf2e77a862ec26988c9ef">getPlayerName</a></div><div class="ttdeci">void getPlayerName(char *playername)</div><div class="ttdoc">\function getPlayerName</div><div class="ttdef"><b>Definition:</b> UserIO.c:32</div></div>
+<div class="ttc" id="aUserIO_8h_html_aa88f7094767b110fbdc84c53e19d0daf"><div class="ttname"><a href="UserIO_8h.html#aa88f7094767b110fbdc84c53e19d0daf">DrawField</a></div><div class="ttdeci">void DrawField(char field_data[ROWS][COLUMNS])</div><div class="ttdoc">\function print_game_field</div><div class="ttdef"><b>Definition:</b> UserIO.c:91</div></div>
+<div class="ttc" id="astructLeaderboardEntry_html"><div class="ttname"><a href="structLeaderboardEntry.html">LeaderboardEntry</a></div><div class="ttdef"><b>Definition:</b> FileIO.h:15</div></div>
+<div class="ttc" id="astruct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
